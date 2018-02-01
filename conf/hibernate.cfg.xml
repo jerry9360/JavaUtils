@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration SYSTEM 
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+	
+	     <!-- 
+	     <property name="hibernate.dialect">
+			org.hibernate.dialect.MySQLDialect
+		</property>
+		<property name="hibernate.connection.driver_class">
+			com.mysql.jdbc.Driver
+		</property>
+
+		<property name="hibernate.connection.url">
+			jdbc:mysql://localhost/xianteng
+		</property>
+		<property name="hibernate.connection.username">
+			root
+		</property>
+		<property name="hibernate.connection.password">
+			iipconfig
+		</property>
+	     
+	      -->
+	
+		<property name="hibernate.dialect">
+			org.hibernate.dialect.Oracle10gDialect
+		</property>
+		<property name="hibernate.connection.driver_class">
+			oracle.jdbc.driver.OracleDriver
+		</property>
+
+		<!-- Assume test is the database name 192.168.131.37 -->
+		<property name="hibernate.connection.url">
+			jdbc:oracle:thin:@192.168.131.37:1521:orcl
+			<!-- jdbc:oracle:thin:@10.224.5.3:1521:orcl -->
+		</property>
+		<!-- cqbigdata cqhlwcj -->
+		<property name="hibernate.connection.username">
+		 **********
+		</property>
+		<property name="hibernate.connection.password">
+		   qwe123456
+		</property>
+
+		<property name="c3p0.min_size">2</property> <!--在连接池中可用数据库连接的最小数目 -->
+		<property name="c3p0.max_size">5</property> <!--在连接池中所有数据库连接的最大数目 -->
+		<property name="c3p0.time_out">1800</property> <!--设定数据库连接的超时时间 -->
+		<property name="c3p0.max_statement">5</property> <!--可以被缓存的PreparedStatement的最大数目 -->
+		<property name="c3p0.maxIdleTime">1800</property><!--最大空闲时间,1800秒内未使用则连接被丢弃。若为0则永不丢弃。Default: 0 -->
+
+		<!-- List of XML mapping files -->
+		<mapping resource="com/centit/sjcj/model/Url.hbm.xml" />
+		<mapping resource="com/centit/sjcj/model/InternetData.hbm.xml" />
+		<mapping resource="com/centit/sjcj/model/Jwdata.hbm.xml" />
+		<mapping resource="com/centit/sjcj/model/Config.hbm.xml" />
+		<mapping resource="com/centit/sjcj/model/Crawler.hbm.xml" />
+		<mapping resource="com/centit/sjcj/model/Corpinfo.hbm.xml" />
+		<mapping resource="com/centit/sjcj/model/Personinfo.hbm.xml" />
+		<mapping resource="com/centit/sjcj/model/Persondata.hbm.xml" />
+		<mapping resource="com/centit/sjcj/model/JudgeDoc.hbm.xml" />
+		<mapping resource="com/centit/sjcj/model/Dishonestman.hbm.xml" />
+		<mapping resource="com/centit/sjcj/model/ProjectData.hbm.xml" />
+		<mapping resource="com/centit/sjcj/model/WeiXinData.hbm.xml" />
+	    <mapping resource="com/centit/sjcj/model/Jwnewdata.hbm.xml" />
+	    <mapping resource="com/centit/sjcj/model/JudgeDocBigData.hbm.xml" />
+	    <mapping resource="com/centit/sjcj/model/JwDataBigData.hbm.xml" />
+	    <mapping resource="com/centit/sjcj/model/DishonestManBigData.hbm.xml" />
+	    <mapping resource="com/centit/sjcj/model/ProjectDataBigData.hbm.xml" />
+	    <mapping resource="com/centit/sjcj/model/WeiXinDataBigData.hbm.xml" />
+	</session-factory>
+</hibernate-configuration>
